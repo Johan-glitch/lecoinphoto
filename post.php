@@ -32,7 +32,7 @@
         crossorigin="anonymous"></script>
     <!--Navbar-->
     <nav class="navbar">
-        <img src="logo_color.png" width="70" height="70" alt="">
+        <img src="logo_color.png" class="logo" alt="">
         <a class="nav-link" href="index.php">Le Coin Photographique</a>
         <?php
         if (isset($_SESSION['username'])) {
@@ -58,13 +58,12 @@
     <div class="row row-connexion">
         <form method="post" name="login">
         <div class="row">
-                <label for="fileSelect">Choisir une image</label>
-                <input name="photo" type="file" class="form-control"  id="fileSelect">
-                <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .gif, .png sont autorisés à un maximum de 5 MB.</p>
-
+                <label for="fileSelect">Entrez l'url pour votre image</label>
+                <input name="photo" type="text" class="form-control"  id="fileSelect">
+                <p><strong>Note:</strong> Hébergez votre image sur <a href="https://www.casimages.com/"  target=_blank>Casimages</a> et insérez l'url de votre image.</p>
             </div>
             <div class="row">
-                <label for="titre" class="center">Titre</label>
+                <label for="titre">Titre</label>
                 <input name="titre" type="text" class="form-control">
 
             </div>

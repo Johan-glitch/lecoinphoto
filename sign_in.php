@@ -49,9 +49,9 @@
                 </select>
             </div>
             <div class="row">
-                <label for="fileSelect">Choisir une image</label>
-                <input name="photo" type="file" class="form-control"  id="fileSelect">
-                <p><strong>Note:</strong> Seuls les formats .jpg, .jpeg, .gif, .png sont autorisés à un maximum de 5 MB.</p>
+            <label for="fileSelect">Entrez l'url pour votre image</label>
+                <input name="photo" type="text" class="form-control"  id="fileSelect">
+                <p><strong>Note:</strong> Hébergez votre image sur <a href="https://www.casimages.com/">Casimages</a> et insérez l'url de votre image.</p>
             </div>
             <div class="row">
                 <label for="password">Mot de passe</label>

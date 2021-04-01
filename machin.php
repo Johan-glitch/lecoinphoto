@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="javascript.css">
+    <link rel="stylesheet" href="javascript.js">
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -49,21 +49,22 @@
 
 <body>
 
-<div class="row">
+    <div class="row">
         <h1 class="title-connexion">Galerie</h1>
-</div>
+    </div>
 
-<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner"> 
+    <div class="row">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
 
-<?php
+                <?php
         $bdd = new PDO('mysql:host=localhost;dbname=lecoinphoto;charset=utf8', 'phpmyadmin', 'Simplon974', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         $reponse = $bdd->query('SELECT * FROM publication');
         while ($donnees = $reponse->fetch()) {
 
 
           echo "    <div class=\"carousel-item active\">\n";
-          echo "      <img src=\"" . $donnees['photo'] . "\" class=\"d-block w-100\" alt=\"...\">\n";
+          echo "      <img src=\"" . $donnees['photo'] . "\" class=\"d-block w-50\" alt=\"...\">\n";
           echo "      <div class=\"carousel-caption d-none d-md-block\">\n";
           echo "        <h5>" . $donnees['titre'] . "</h5>\n";
           echo "              <p>" . $donnees['description'] . "</p>\n";
@@ -74,18 +75,21 @@
               
 }
 
-?> 
+?>
 
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
 
 
 </body>

@@ -30,6 +30,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
     <!--Font Icons-->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
@@ -49,7 +50,6 @@
         <a class="btn-menu" href="search.php">Recherche</a>
         <a class="btn-menu" href="profil.php">Profil</a>
         <a class="btn-menu" href="galerie.php">Galerie</a>
-
     </nav>
 
 </head>
@@ -69,15 +69,16 @@
     $reponse = $bdd->query('SELECT * FROM publication');
     while ($donnees = $reponse->fetch()) {
         echo "<div class=\"row\">\n";
-        echo "    <div class=\"card\" style=\"width: 28rem;\">\n";
-        echo "        <img class=\"card-img-top\" src=\"" . $donnees['photo'] . "\" alt=\"Card image cap\">\n";
-        echo "        <div class=\"card-body\">\n";
-        echo "            <h3 class=\"card-title\"><b>" . $donnees['titre'] . "</b></h3>\n";
+        echo "<div class=\"card\" style=\"width: 28rem;\">\n";
+        echo "  <img src=\"" . $donnees['photo'] . "\" class=\"card-img-top\" alt=\"...\">\n";
+        echo "  <div class=\"card-body\">\n";
+        echo "      <h3 class=\"card-title\"><b>" . $donnees['titre'] . "</b></h3>\n";
         echo "            <p class=\"card-text\">" . $donnees['description'] . "</p>\n";
         echo "    <p class=\"card-text\">" . $donnees['lieu'] . "</p>\n";
-        echo "        </div>\n";
-        echo "    </div>\n";
+        echo "  </div>\n";
         echo "</div>";
+        echo "</div>";
+
     }
 ?>
 

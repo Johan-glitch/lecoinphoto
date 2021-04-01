@@ -33,7 +33,7 @@
 
     <!--Navbar-->
     <nav class="navbar">
-        <img src="logo_color.png" width="70" height="70" alt="">
+        <img src="logo_color.png" class="logo" alt="">
         <a class="nav-link" href="index.php">Le Coin Photographique</a>
         <a href="logout.php" class="nav-link">Déconnexion</a>
     </nav>

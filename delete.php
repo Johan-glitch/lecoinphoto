@@ -1,28 +1,18 @@
 <?php
-$servername = "localhost";
-$username = "phpmyadmin";
-$password = "Simplon974";
-$dbname = "lecoinphoto";
-$id = "id";
-
-try {
-  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-  // set the PDO error mode to exception
-  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-  // sql to delete a record
-  $sql = "DELETE FROM users WHERE id=$id ";
-
-  // use exec() because no results are returned
-  $conn->exec($sql);
-  echo "Votre compte a bien été supprimé.";
-  sleep(5);
-} catch(PDOException $e) {
-  echo $sql . "<br>" . $e->getMessage();
+$id=$_GET['id'];
+// Connexion à la base de données
+$link = mysqli_connect("localhost", "phpmyadmin", "Simplon974", "lecoinphoto");
+ $link -> set_charset('utf8');
+// Vérification de la connexion
+if($link === false){
+    die("ERREUR : Impossible de se connecter. " . mysqli_connect_error());
 }
-
-header('Location: login.php');
-exit();
-
-
+ 
+// Attempt delete query execution
+$sql = "DELETE FROM users WHERE id=".$id."";
+if(mysqli_query($link, $sql)){
+    echo "Votre compte a été supprimé avec succès.";
+} else{
+    echo "ERREUR : Impossible d’exécuter $sql. " . mysqli_error($link);
+}
 ?>
